@@ -6,7 +6,7 @@
     <title>Sudeep Basak's Resume</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
@@ -17,47 +17,94 @@
             margin: 0 auto;
             background-color: #fff;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            animation: fadeIn 1s ease-in-out;
         }
-        h1, h2, h3 {
-            color: #2c3e50;
-        }
-        .header, .section {
-            margin-bottom: 20px;
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
         }
         .header {
             text-align: center;
+            margin-bottom: 20px;
         }
         .header h1 {
             margin: 0;
+            font-size: 2.5em;
+            color: #2c3e50;
         }
         .header p {
             margin: 5px 0;
+            font-size: 1.1em;
+        }
+        .header a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .section {
+            margin-bottom: 20px;
         }
         .section-title {
-            border-bottom: 2px solid #2c3e50;
-            padding-bottom: 5px;
+            font-size: 1.8em;
+            color: #2c3e50;
             margin-bottom: 10px;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background-color: #3498db;
+            position: absolute;
+            left: 0;
+            bottom: -5px;
         }
         .section-item {
             margin-bottom: 15px;
         }
         .section-item h3 {
             margin: 5px 0;
+            font-size: 1.3em;
+            color: #2980b9;
         }
         .section-item p {
             margin: 5px 0;
+            font-size: 1em;
+            color: #666;
+        }
+        .section-item ul {
+            list-style-type: disc;
+            margin-left: 20px;
         }
         .skills ul {
             list-style-type: none;
             padding: 0;
         }
         .skills ul li {
-            display: inline;
-            margin-right: 10px;
+            display: inline-block;
+            margin: 5px;
             background-color: #e7e7e7;
-            padding: 5px 10px;
-            border-radius: 5px;
+            padding: 10px 15px;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+        .skills ul li:hover {
+            background-color: #3498db;
+            color: #fff;
+        }
+        .interactive-item {
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .interactive-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .projects a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -65,24 +112,24 @@
     <div class="container">
         <div class="header">
             <h1>Sudeep Basak</h1>
-            <p>Email: sudeep.bi7+sap@gmail.com | Phone: +353-89-9620050</p>
+            <p>Email: <a href="mailto:sudeep.bi7+sap@gmail.com">sudeep.bi7+sap@gmail.com</a> | Phone: +353-89-9620050</p>
             <p>LinkedIn: <a href="https://www.linkedin.com/in/sudeep-basak-sap-bi/">linkedin.com/in/sudeep-basak-sap-bi</a> | Dublin, Ireland</p>
         </div>
         
         <div class="section">
             <div class="section-title">
-                <h2>Summary</h2>
+                Summary
             </div>
-            <div class="section-item">
+            <div class="section-item interactive-item" onclick="toggleContent(this)">
                 <p>Over 15+ years as an SAP BI Consultant with wide experience in the field of BI Analytics. I have taken on many different roles and responsibilities in both local small-scale & international large-scale projects and have built up a balanced expertise in technical design, development, requirement gathering, and functional analyses of business processes in various domains. A problem-solver who is positive, dependable, and flexible.</p>
             </div>
         </div>
 
         <div class="section">
             <div class="section-title">
-                <h2>Experience</h2>
+                Experience
             </div>
-            <div class="section-item">
+            <div class="section-item interactive-item" onclick="toggleContent(this)">
                 <h3>SAP BI Solution Lead - BW4HANA/S4HANA 1909, Glen Dimplex</h3>
                 <p>Dublin, IE | 08/2020 - Present</p>
                 <ul>
@@ -95,7 +142,7 @@
                     <li>Developed SCM and Finance AFO queries on S/4 CDS views and BW/4 Composite Providers.</li>
                 </ul>
             </div>
-            <div class="section-item">
+            <div class="section-item interactive-item" onclick="toggleContent(this)">
                 <h3>SAP BI Lead - BW4HANA/S4HANA 1909, TCS</h3>
                 <p>Dublin, IE | 03/2018 - 07/2020</p>
                 <ul>
@@ -105,7 +152,7 @@
                     <li>Built embedded analytics reports for FI, MM, and PS modules within Fiori.</li>
                 </ul>
             </div>
-            <div class="section-item">
+            <div class="section-item interactive-item" onclick="toggleContent(this)">
                 <h3>Senior Consultant - BW7.4/ECC 6, Capgemini</h3>
                 <p>Dublin, IE | 09/2013 - 03/2018</p>
                 <ul>
@@ -114,7 +161,7 @@
                     <li>Built multiple data models for the Finance Team.</li>
                 </ul>
             </div>
-            <div class="section-item">
+            <div class="section-item interactive-item" onclick="toggleContent(this)">
                 <h3>Senior Consultant - BW7.0/ECC 6, Capgemini</h3>
                 <p>Dublin, IE | 02/2012 - 07/2013</p>
                 <ul>
@@ -123,7 +170,7 @@
                     <li>Worked extensively on LOCockpit delta Mechanism & enhancements.</li>
                 </ul>
             </div>
-            <div class="section-item">
+            <div class="section-item interactive-item" onclick="toggleContent(this)">
                 <h3>Other Projects as BI Consultant, Capgemini</h3>
                 <p>India & UK | 06/2008 - 10/2011</p>
                 <ul>
@@ -138,9 +185,9 @@
 
         <div class="section">
             <div class="section-title">
-                <h2>Education</h2>
+                Education
             </div>
-            <div class="section-item">
+            <div class="section-item interactive-item" onclick="toggleContent(this)">
                 <h3>Bachelor of Engineering in Telecommunication, Visvesvaraya National Institute of Technology</h3>
                 <p>Bangalore, India | 2007</p>
             </div>
@@ -148,7 +195,7 @@
 
         <div class="section">
             <div class="section-title">
-                <h2>Skills</h2>
+                Skills
             </div>
             <div class="skills">
                 <ul>
@@ -166,9 +213,9 @@
 
         <div class="section">
             <div class="section-title">
-                <h2>Certifications</h2>
+                Certifications
             </div>
-            <div class="section-item">
+            <div class="section-item interactive-item" onclick="toggleContent(this)">
                 <ul>
                     <li>SAP Application Specialist - BW/4HANA Application Associate - SAC</li>
                     <li>IoT with SAP Leonardo</li>
@@ -176,5 +223,13 @@
             </div>
         </div>
     </div>
+    <script>
+        function toggleContent(element) {
+            const content = element.querySelector('ul');
+            if (content) {
+                content.style.display = content.style.display === 'none' ? 'block' : 'none';
+            }
+        }
+    </script>
 </body>
 </html>
